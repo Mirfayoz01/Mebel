@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahsulotlar</title>
+    <style>
+        /* Umumiy sozlamalar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.product-list{
+    background-color: #cccccc;
+    color: #fff;
+    padding: -15px 0;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+
+/* Header dizayni */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Mahsulot ro'yxati */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+}
+
+.product-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 40px); /* Har bir mahsulot uchdan bir qismini oladi */
+    text-align: center;
+    padding: 20px;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.product-item h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #777;
+}
+
+.buy-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer dizayni */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+}
+
+/* Responsiv dizayn */
+@media (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 40px); /* Ikkidan bir qism */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: 100%; /* Bitta mahsulot butun kenglikni oladi */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Bolalar xonasi</h1>
+        </div>
+    </header>
+
+    <main>
+        <a href="/product" class="back-button">Orqaga</a>
+        <section class="product-list">
+            {%for pd in products%}
+            <div class="product-item">
+                <img src="{{ pd.image.url }}" alt="Mahsulot 1">
+                <h2>{{ pd.nomi }}</h2>
+            </div>
+            <!-- Yana boshqa mahsulotlar qo'shishingiz mumkin -->
+             {%endfor%}
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Buyurtma asosida didingizga mos va oziga xos mebellar. Barcha huquqlar himoyalangan.</p>
+    </footer>
+</body>
+</html>

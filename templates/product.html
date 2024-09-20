@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNION mebel</title>
+    <style>
+        /* Umumiy sozlamalar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d3d3d3;
+    
+}
+
+/* Header dizayni */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 20px 0 0 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+header nav ul li {
+    display: inline;
+    cursor: pointer;
+}
+
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Mahsulotlar bo'limi */
+main {
+    text-align: center;
+    padding: 40px 20px;
+}
+.products .product a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.products .product {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Footer dizayni */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsiv dizayn */
+@media (max-width: 768px) {
+    .products {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        max-width: 80px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .products .product {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>UNION mebel</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Bosh sahifa</a></li>
+                    <li><a href="#">Mahsulotlar</a></li>
+                    <li><a href="/biz_haqimizda">Biz haqimizda</a></li>
+                    <li><a href="/contact">Aloqa</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Mahsulotlar</h2>
+        <div class="products">
+            <div class="product"><a href="/karidor">Karidor</a></div>
+            <div class="product"><a href="/ofis">O'fis uchun</a></div>
+            <div class="product"><a href="/oshxona">Oshxona</a></div>
+            <div class="product"><a href="/shkaf">Shkaf</a></div>
+            <div class="product"><a href="/bolalar">Bolalar xonasi</a></div>
+            <div class="product"><a href="/kattalar">Kattalar xonasi</a></div>
+            <div class="product"><a href="/tv">Televizion xona</a></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Buyurtma asosida didingizga mos va oziga xos mebellar. Barcha huquqlar himoyalangan.</p>
+    </footer>
+</body>
+</html>

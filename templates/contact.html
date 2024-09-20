@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mebel Do'koni - Aloqa</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #d3d3d3;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.imga{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 60px;
+    padding-left: 20px;
+}
+
+.logo{
+    width: 80px; /* Adjust the size as needed */
+    height: auto;
+    background: url(https://i.postimg.cc/4dG225BC/image-2024-07-02-17-49-35-2.png);
+    border-radius: 50%;
+}
+
+header {
+    
+}
+
+
+.container{
+    background-color: #2f2f2f;
+    color: white;
+    padding: -10px -20px;
+    text-align: center;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.contact {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    margin-button: 50px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    margin-top: 0;
+}
+
+.contact label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact button {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #2f2f2f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .slider {
+        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+     .slider {
+        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        padding: 50px 20px;
+    }
+
+    .product {
+        max-width: 100%;
+    }
+    .imga{
+        display: none;
+    }
+
+    .container{
+        margin-top: -20px;
+   } 
+
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="imga"><img src="https://i.postimg.cc/bJD21HHb/image-2024-07-02-17-49-35.pnghttps://i.postimg.cc/bJD21HHb/image-2024-07-02-17-49-35.png" alt="Union Mebel Logo" class="logo"></div>
+            <h1>UNION mebel</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Bosh sahifa</a></li>
+                    <li><a href="/product">Mahsulotlar</a></li>
+                    <li><a href="/biz_haqimizda">Biz haqimizda</a></li>
+                    <li><a href="#">Aloqa</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="contact">
+            <h2>Aloqa</h2>
+            <form method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <label for="name">Ismingiz:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phones">Telefon raqamingiz:</label>
+                <input type="number" id="phone" name="phone" required>
+
+                <label for="message">Bizga xabar yuborish:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+
+                <button type="submit">Yuborish</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>©  2024 Buyurtma asosida didingizga mos va oziga xos mebellar. Barcha huquqlar himoyalangan.</p>
+    </footer>
+</body>
+</html>
